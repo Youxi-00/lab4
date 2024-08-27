@@ -1,0 +1,55 @@
+<?php
+
+class Customer {
+    private $name;
+    private $address;
+    private $phoneNumber;
+
+    public function __construct($name, $address, $phoneNumber) {
+        $this->setName($name);
+        $this->setAddress($address);
+        $this->setPhoneNumber($phoneNumber);
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setName($name) {
+        if (!empty($name)) {
+            $this->name = $name;
+        } else {
+            throw new Exception("Name cannot be empty.");
+        }
+    }
+
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function setAddress($address) {
+        if (!empty($address)) {
+            $this->address = $address;
+        } else {
+            throw new Exception("Address cannot be empty.");
+        }
+    }
+
+    public function getPhoneNumber() {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber($phoneNumber) {
+        if (!empty($phoneNumber)) {
+            $this->phoneNumber = $phoneNumber;
+        } else {
+            throw new Exception("Phone number cannot be empty.");
+        }
+    }
+
+    public function getCustomerDetails() {
+        return "Customer Name: {$this->name}, Address: {$this->address}, Phone: {$this->phoneNumber}";
+    }
+}
+
+?>
